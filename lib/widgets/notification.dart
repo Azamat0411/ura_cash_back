@@ -21,19 +21,34 @@ class Notifications extends StatelessWidget {
             position: FlashPosition.top,
             behavior: FlashBehavior.floating,
             borderRadius: BorderRadius.circular(10),
-            margin: EdgeInsets.symmetric(vertical: MediaQuery
+            margin: EdgeInsets.symmetric(
+                vertical: MediaQuery
                 .of(context)
                 .padding
-                .top + 10),
+                .top + 10,
+              horizontal: 50
+            ),
             child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: MyTextWidget(text: message, textColor: Colors.white, fontWeight: FontWeight.w400, fontSize: 16),
-                )
-              ],
-            )
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Flexible(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: MyTextWidget(
+                            textAlign: TextAlign.center,
+                            text: message,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            textColor: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ])
           );
         });
   }

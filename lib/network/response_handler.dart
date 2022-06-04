@@ -1,4 +1,3 @@
-
 import 'server_error.dart';
 
 class ResponseHandler<T> {
@@ -14,5 +13,4 @@ class ResponseHandler<T> {
   }
 
   ServerError getException() => _error;
-
 }
